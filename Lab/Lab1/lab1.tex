@@ -1,0 +1,166 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+
+\title{Lab 1: Basic Networking Commands}
+\author{CSE 3111 - Computer Networks Lab}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Basic Networking Commands in Linux}
+
+This section describes commonly used networking commands in Linux and their usage with examples.
+
+\subsection{PING}
+The \texttt{ping} command is used to test the reachability of a host on a network and to measure the round-trip time of messages sent to the destination.
+
+\textbf{Purpose:} Tests network connectivity and measures latency.
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+ping google.com
+ping -c 5 8.8.8.8
+ping -t 64 facebook.com
+\end{verbatim}
+
+\textbf{Common Options:}
+\begin{itemize}
+    \item \texttt{-c count}: Send only specified number of packets
+    \item \texttt{-t ttl}: Set Time To Live value
+    \item \texttt{-i interval}: Set interval between packets
+\end{itemize}
+
+\subsection{TRACEROUTE}
+The \texttt{traceroute} command displays the route packets take to reach a network host, showing all intermediate hops and the time taken at each hop.
+
+\textbf{Purpose:} Traces the path packets take through the network.
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+traceroute google.com
+traceroute -n 8.8.8.8
+traceroute -m 15 facebook.com
+\end{verbatim}
+
+\textbf{Common Options:}
+\begin{itemize}
+    \item \texttt{-n}: Display IP addresses instead of hostnames
+    \item \texttt{-m max\_ttl}: Set maximum number of hops
+    \item \texttt{-p port}: Set destination port
+\end{itemize}
+
+\subsection{IFCONFIG}
+The \texttt{ifconfig} (interface configuration) command is used to display and configure network interfaces. It shows IP addresses, MAC addresses, and can enable/disable interfaces.
+
+\textbf{Purpose:} Configure and display network interface information.
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+ifconfig
+ifconfig eth0
+ifconfig eth0 192.168.1.100 netmask 255.255.255.0
+ifconfig eth0 up
+ifconfig eth0 down
+\end{verbatim}
+
+\textbf{Common Operations:}
+\begin{itemize}
+    \item Display all interfaces: \texttt{ifconfig}
+    \item Display specific interface: \texttt{ifconfig eth0}
+    \item Set IP address: \texttt{ifconfig eth0 <IP> netmask <mask>}
+    \item Enable interface: \texttt{ifconfig eth0 up}
+    \item Disable interface: \texttt{ifconfig eth0 down}
+\end{itemize}
+
+\subsection{ARP}
+The \texttt{arp} command is used to view and manipulate the ARP (Address Resolution Protocol) table, which maps IP addresses to MAC addresses in the local network.
+
+\textbf{Purpose:} Manage ARP table entries (IP to MAC address mapping).
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+arp -a
+arp 192.168.1.1
+arp -d 192.168.1.100
+arp -s 192.168.1.50 00:11:22:33:44:55
+\end{verbatim}
+
+\textbf{Common Options:}
+\begin{itemize}
+    \item \texttt{-a}: Display all ARP table entries
+    \item \texttt{-d}: Delete an ARP entry
+    \item \texttt{-s}: Add a static ARP entry
+    \item \texttt{-n}: Display IP addresses instead of hostnames
+\end{itemize}
+
+\subsection{RARP}
+The \texttt{rarp} (Reverse Address Resolution Protocol) is used to map a MAC address to its corresponding IP address. It is primarily used by diskless machines to request their IP from a server.
+
+\textbf{Purpose:} Reverse lookup of MAC address to IP address.
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+rarp -a
+rarp 00:11:22:33:44:55
+\end{verbatim}
+
+\textbf{Note:} RARP is largely obsolete and has been replaced by DHCP in modern networks.
+
+\subsection{NSLOOKUP}
+The \texttt{nslookup} command is used to query Domain Name System (DNS) servers to find domain name or IP address mapping and other DNS records.
+
+\textbf{Purpose:} Query DNS servers for domain name resolution.
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+nslookup google.com
+nslookup 8.8.8.8
+nslookup -type=MX gmail.com
+nslookup google.com 8.8.8.8
+\end{verbatim}
+
+\textbf{Common Query Types:}
+\begin{itemize}
+    \item \texttt{A}: IPv4 address record
+    \item \texttt{AAAA}: IPv6 address record
+    \item \texttt{MX}: Mail exchange record
+    \item \texttt{NS}: Name server record
+    \item \texttt{PTR}: Pointer record (reverse lookup)
+\end{itemize}
+
+\subsection{NETSTAT}
+The \texttt{netstat} command provides information about network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+
+\textbf{Purpose:} Display network connections and statistics.
+
+\textbf{Usage Examples:}
+\begin{verbatim}
+netstat -a
+netstat -r
+netstat -i
+netstat -l
+netstat -an | grep :80
+netstat -t
+netstat -u
+\end{verbatim}
+
+\textbf{Common Options:}
+\begin{itemize}
+    \item \texttt{-a}: Display all connections and listening ports
+    \item \texttt{-r}: Show routing table
+    \item \texttt{-i}: Display interface statistics
+    \item \texttt{-l}: Show only listening ports
+    \item \texttt{-n}: Display numerical addresses
+    \item \texttt{-t}: Show TCP connections
+    \item \texttt{-u}: Show UDP connections
+    \item \texttt{-p}: Show process IDs and names
+\end{itemize}
+
+\section{Summary}
+These basic networking commands are essential tools for network troubleshooting, configuration, and monitoring in Linux systems. Understanding their usage and options helps in diagnosing network issues and managing network interfaces effectively.
+
+\end{document}
