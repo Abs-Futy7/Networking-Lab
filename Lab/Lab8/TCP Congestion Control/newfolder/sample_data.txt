@@ -1,0 +1,73 @@
+Welcome to TCP Data Transmission Lab!
+This is a sample text file that demonstrates real data transfer using TCP protocols.
+
+The file contains multiple lines of text that will be transmitted from client to server.
+Each packet will carry actual data chunks instead of just packet identifiers.
+
+TCP Tahoe and TCP Reno algorithms will be tested with this real data transmission.
+The congestion control mechanisms will manage how this data flows through the network.
+
+Line 8: This helps us analyze the performance differences between the two algorithms.
+Line 9: Packet loss simulation will affect how quickly this data reaches the destination.
+Line 10: Fast retransmit and fast recovery mechanisms will be triggered during transmission.
+
+Line 12: The server will acknowledge each received data chunk.
+Line 13: Performance metrics will show throughput, RTT, and packet loss rates.
+Line 14: This realistic scenario provides better insights into TCP behavior.
+
+Line 16: Additional content to make the file larger for transmission testing.
+Line 17: More data means more packets and better congestion control demonstration.
+Line 18: Each line represents a portion of data that needs reliable delivery.
+
+Line 20: TCP ensures all this data arrives correctly at the destination.
+Line 21: End of sample data file for TCP transmission testing.
+
+Line 22: Extended content begins here for comprehensive testing scenarios.
+Line 23: Larger files help demonstrate TCP's sliding window protocol effectively.
+Line 24: Window size adjustments occur dynamically based on network conditions.
+Line 25: Congestion avoidance phase shows exponential growth in window size.
+
+Line 27: Slow start algorithm begins with window size of one segment.
+Line 28: Exponential increase continues until slow start threshold is reached.
+Line 29: Network bandwidth utilization improves with proper window management.
+Line 30: Buffer overflow prevention is crucial for maintaining data integrity.
+
+Line 32: Duplicate acknowledgments trigger fast retransmit mechanisms.
+Line 33: TCP Reno's fast recovery differs significantly from TCP Tahoe's approach.
+Line 34: Timeout events reset congestion window to initial values in Tahoe.
+Line 35: Reno maintains higher throughput by avoiding slow start after fast retransmit.
+
+Line 37: Sequence numbers ensure proper ordering of transmitted data segments.
+Line 38: Acknowledgment numbers confirm successful receipt of data packets.
+Line 39: Checksum verification prevents corrupted data from being accepted.
+Line 40: Flow control prevents sender from overwhelming receiver's buffer capacity.
+
+Line 42: Maximum segment size negotiation occurs during connection establishment.
+Line 43: Path MTU discovery optimizes packet size for network infrastructure.
+Line 44: Fragmentation at IP layer can impact TCP performance significantly.
+Line 45: Nagle's algorithm reduces small packet overhead in interactive applications.
+
+Line 47: Delayed acknowledgments improve network efficiency by reducing ACK traffic.
+Line 48: Cumulative acknowledgments allow recovery from multiple packet losses.
+Line 49: Selective acknowledgments provide more granular loss recovery information.
+Line 50: Window scaling option enables high-bandwidth delay product networks.
+
+Line 52: Connection establishment uses three-way handshake for reliable setup.
+Line 53: SYN, SYN-ACK, and ACK packets initialize sequence numbers properly.
+Line 54: Connection termination requires four-way handshake for clean closure.
+Line 55: FIN packets ensure all data is transmitted before connection ends.
+
+Line 57: Keep-alive mechanisms detect broken connections in long-idle sessions.
+Line 58: Socket buffer sizes affect application performance and memory usage.
+Line 59: TCP options provide extensibility for future protocol enhancements.
+Line 60: Timestamp options enable more accurate RTT measurements and PAWS.
+
+Line 62: This extended dataset provides sufficient content for thorough testing.
+Line 63: Multiple kilobytes of data stress-test congestion control algorithms.
+Line 64: Real-world scenarios require handling of large file transfers efficiently.
+Line 65: Performance analysis becomes more meaningful with substantial data volumes.
+
+Line 67: Network simulation parameters can be adjusted to model various conditions.
+Line 68: Bandwidth delay product calculations guide optimal buffer sizing.
+Line 69: Jitter and packet reordering effects become visible with larger datasets.
+Line 70: End of extended sample data for comprehensive TCP testing scenarios.
